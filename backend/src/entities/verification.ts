@@ -1,7 +1,6 @@
-import bcrypt from "bcrypt";
-import { IsEmail } from "class-validator";
+
 import { verificationTarget } from "src/types/types";
-import { BaseEntity, BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import { BaseEntity, BeforeInsert, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 import User from "./User";
 
 const PHONE = "PHONE";

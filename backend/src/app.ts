@@ -4,7 +4,6 @@ import helmet from "helmet";
 import logger from "morgan";
 import schema from './schema'
 import dotenv from 'dotenv';
-import { Resolvers } from "./types/resolvers";
 
 dotenv.config();    
 
@@ -41,9 +40,3 @@ class App {
 }
 
 export default new App().app;
-
-const resolvers: Resolvers  = {
-  Query:{
-      sayHello: () => ""
-  }
-}

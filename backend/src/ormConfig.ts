@@ -7,8 +7,8 @@ const connectionOptions:ConnectionOptions = {
     database: "Uber",
     synchronize: true, 
     logging: true, 
-    entities:["entities/**/*.*"],
-    host: process.env.DB_ENDPOINT || "localhost", 
+    entities:[__dirname + "/entities/**/*.ts"],
+    host: process.env.DB_ENDPOINT || "localhosting", 
     port:5432, 
     username: process.env.DB_USERNAME || "eldadmamo",
     password: process.env.DB_PASSWORD || ""
