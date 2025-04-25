@@ -1,0 +1,7 @@
+mutation{
+  EmailSignIn(email:"abenezer4@gmail.com", password:"123456"){
+    ok
+    token
+    error
+  }
+}

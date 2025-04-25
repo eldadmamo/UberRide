@@ -67,8 +67,6 @@ class User extends BaseEntity {
     @OneToMany(type => Message, message => message.user)
     messages : Message[];
 
-    
-
     @OneToMany(type => Ride, ride => ride.passenger)
     rideAsPassenger: Ride[]
 
@@ -81,8 +79,9 @@ class User extends BaseEntity {
     get fullName(): string {
         return `${this.firstName} ${this.lastName}`
     }
+    
 
-    public comparePassword(password: string):Promise<boolean>{
+    public comparePassword(password: string): Promise<boolean>{
         return bcrypt.compare(password, this.password)
     }
     
