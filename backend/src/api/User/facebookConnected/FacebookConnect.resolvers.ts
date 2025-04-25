@@ -3,6 +3,7 @@ import { FacebookConnectMutationArgs, FacebookConnectResponse } from "src/types/
 import { Resolvers } from "src/types/resolvers";
 import createJWT from "../../../utils/createJWT";
 
+
 const resolvers: Resolvers = {
     Mutation: {
      FacebookConnect:async (
