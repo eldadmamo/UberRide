@@ -1,0 +1,9 @@
+type DeletePriceResponse{
+    ok: Boolean!
+    error: String 
+}
+
+
+type Mutation {
+    DeletePrice(placeId: Int!): DeletePriceResponse!
+}

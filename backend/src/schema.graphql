@@ -17,6 +17,7 @@ type Message {
 
 type Query {
   sayBye: String!
+  GetMyPlaces: GetMyPlacesResponse!
   GetMyProfile: GetMyProfileResponse!
 }
 
@@ -27,6 +28,7 @@ type AddPlaceResponse {
 
 type Mutation {
   AddPlace(name: String!, lat: Float!, lng: Float!, address: String!, isFav: Boolean!): AddPlaceResponse!
+  DeletePrice(placeId: Int!): DeletePriceResponse!
   EditPlace(placeId: Int!, name: String, isFav: Boolean): EditPlaceResponse!
   CompleteEmailVerification(key: String!): CompleteEmailVerificationResponse!
   CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!
@@ -40,9 +42,20 @@ type Mutation {
   UpdateMyProfile(firstName: String, lastName: String, email: String, password: String, profilePhoto: String, age: Int): UpdateMyProfileResponse!
 }
 
+type DeletePriceResponse {
+  ok: Boolean!
+  error: String
+}
+
 type EditPlaceResponse {
   ok: Boolean!
   error: String
+}
+
+type GetMyPlacesResponse {
+  ok: Boolean!
+  error: String
+  places: [Place]
 }
 
 type Place {
@@ -52,6 +65,7 @@ type Place {
   lng: Float!
   address: String!
   isFav: Boolean!
+  userId: Int!
   user: User!
   createdAt: String!
   updatedAt: String

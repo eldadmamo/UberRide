@@ -69,12 +69,11 @@ class User extends BaseEntity {
     messages : Message[];
 
     @OneToMany(type => Ride, ride => ride.passenger)
-    rideAsPassenger: Ride[]
+    ridesAsPassenger: Ride[]
 
     @OneToMany(type => Ride, ride => ride.driver)
-    rideAsDriver: Ride[]
-    
-    
+    ridesAsDriver: Ride[]
+
     @OneToMany(type => Place, place => place.user)
     places: Place[]
 
