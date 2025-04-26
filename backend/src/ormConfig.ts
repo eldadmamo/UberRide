@@ -4,7 +4,7 @@ console.log(process.env.DB_ENDPOINT)
 
 const connectionOptions:ConnectionOptions = {
     type: "postgres",
-    database: "Uber",
+    database: "Ubernew",
     synchronize: true, 
     logging: true, 
     entities:[__dirname + "/entities/**/*.ts"],
