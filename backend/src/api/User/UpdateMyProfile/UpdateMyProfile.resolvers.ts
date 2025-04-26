@@ -2,6 +2,7 @@ import privateResolver from "../../../utils/privateResolver";
 import { Resolvers } from "../../../types/resolvers";
 import { UpdateMyProfileMutationArgs, UpdateMyProfileResponse } from './../../../types/graph.d';
 import User from "../../../entities/User";
+import cleanNullArgs from "../../../utils/cleanNullArg";
 
 
 const resolvers: Resolvers = {
@@ -9,14 +10,12 @@ const resolvers: Resolvers = {
         UpdateMyProfile: privateResolver(
             async(_,args: UpdateMyProfileMutationArgs, {req}): Promise<UpdateMyProfileResponse> => {
                 const user: User = req.user;
-                const notNull = {};
-                Object.keys(args).forEach(key => {
-                    if(args[key] !== null){
-                        notNull[key] = args[key];
-                    }
-                })
+                const notNull = cleanNullArgs(args);
                 try{
-                    
+                    if(args.password !== null){
+                        user.password = args.password;
+                        user.save();
+                    }
                     await User.update({id: user.id},{...notNull});
                     return {
                         ok: true, 
