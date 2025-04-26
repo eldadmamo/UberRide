@@ -16,6 +16,7 @@ const resolvers: Resolvers = {
                     }
                 })
                 try{
+                    
                     await User.update({id: user.id},{...notNull});
                     return {
                         ok: true, 
