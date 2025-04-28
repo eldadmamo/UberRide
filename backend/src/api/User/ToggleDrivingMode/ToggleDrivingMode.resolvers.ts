@@ -11,6 +11,7 @@ const resolvers: Resolvers = {
                 const user: User = req.user;
                 user.isDriving = !user.isDriving;
                 user.save() 
+                console.log(user)
                 return {
                     ok: true,
                     error: null 

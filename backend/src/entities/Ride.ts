@@ -1,4 +1,4 @@
-import { rideStatus } from "src/types/types";
+import { rideStatus } from "../types/types";
 import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 import User from "./User";
 
@@ -10,7 +10,7 @@ class Ride extends BaseEntity{
     @Column({
         type: "text", 
         enum:["ACCEPTED", "FINISHED", "CANCELED", "REQUESTING", "ONROUTE"],
-        default: "ACCEPTED"
+        default: "REQUESTING"
     })
     status: rideStatus 
 
@@ -40,9 +40,15 @@ class Ride extends BaseEntity{
 
     @Column({type: "text"})
     duration: string  
-    
-    @ManyToOne(type => User, user => user.ridesAsPassenger, {nullable: true})
+
+    @Column({nullable: true})
+    passengerId: number;
+
+    @ManyToOne(type => User, user => user.ridesAsPassenger)
     passenger: User;
+
+    @Column({nullable: true})
+    driverId: number;
 
     @ManyToOne(type => User, user => user.ridesAsDriver, {nullable: true})
     driver: User;
