@@ -10,10 +10,14 @@ const resolvers: Resolvers = {
         GetRide: privateResolver(
             async(_,args: GetRideQueryArgs, {req}): Promise<GetRideResponse> => {
                 const user: User = req.user;
+                // await Ride.delete({})
+                // user.isTaken = false;
+                // user.isRiding = false;
+                // user.save();
                 try{
                     const ride = await Ride.findOne(
                         {id: args.rideId},
-                        {relations: ["passenger","driver"]}
+                        {relations: ["passenger","driver","passenger.chatsAsPassenger", "driver.chatsAsDriver"]}
                 )
                
                     if(ride){
