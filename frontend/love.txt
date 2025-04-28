@@ -1,0 +1,8 @@
+C:\Users\eldad\PhpstormProjects\uberride\frontend>npm i apollo-boost graphql react-apollo -S
+
+added 35 packages, and audited 180 packages in 20s
+
+42 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
