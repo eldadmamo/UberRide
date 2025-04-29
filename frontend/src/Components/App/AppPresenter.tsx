@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import AddPlace from '../../Routes/AddPlace'
 import EditAccount from "../../Routes/EditAccount";
 import Home from "../../Routes/Home";
-import OutHome from "../../Routes/OutHome";
+import OutHome from "../../Routes/Login";
 import PhoneLogin from "../../Routes/PhoneLogin";
 import Places from "../../Routes/Places/Places";
 import Ride from "../../Routes/Ride";
@@ -12,6 +12,7 @@ import VerifyPhone from "../../Routes/VerifyPhone";
 import SocialLogin from "../../Routes/SocialLogin";
 import {BrowserRouter, Routes, Route, Navigate  } from 'react-router-dom';
 import FindAddress from "../../Routes/FindAddress"
+import LoginPresenter from "../../Routes/Login/LoginPresenter";
 
 interface IProps {
     isLoggedIn: boolean;
@@ -35,7 +36,7 @@ const AppPresenter: React.FC<IProps> = ({ isLoggedIn }) => (
         ) : (
           <>
             <Route path="/" element={<OutHome />} />
-            <Route path="/phone-login" element={<PhoneLogin />} />
+            <Route path="/phone-login" element={<LoginPresenter />} />
             <Route path="/verify-login" element={<VerifyPhone />} />
             <Route path="/social-login" element={<SocialLogin />} />
             <Route path="*" element={<Navigate to="/" replace />} />
