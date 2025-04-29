@@ -1,14 +1,9 @@
 import { graphql } from "react-apollo";
 import theme from "../../theme";
-import reset from "styled-reset" 
-import { ThemeProvider, injectGlobal } from "../../typed-components";
+import { ThemeProvider } from "../../typed-components";
 import AppPresenter from './AppPresenter';
 import { IS_LOGGED_IN } from "./AppQueries";
 
-// tslint:disable-next-line
-injectGlobal`
-  ${reset}
-`;
 
 
 type AppContainerProps = {

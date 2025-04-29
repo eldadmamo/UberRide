@@ -12,7 +12,7 @@ interface IProps {
 
 const AppPresenter: React.FC<IProps> = ({isLoggedIn}) => 
     isLoggedIn ? <span>you are in</span>: <span>you are out</span>
-Thing
+
 
 
 AppPresenter.propTypes = {
