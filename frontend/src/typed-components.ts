@@ -17,7 +17,7 @@ const {
   ThemeProvider: StyledThemeProvider,
 } = styledComponents as ThemedStyledComponentsModule<IThemeInterface>;
 
-// Cast ThemeProvider to include children prop
+
 const ThemeProvider = StyledThemeProvider as React.ComponentClass<
   React.PropsWithChildren<{ theme: IThemeInterface }>
 >;
