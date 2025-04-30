@@ -1,11 +1,10 @@
-import React from 'react';
-import OutHomePresenter from './LoginPresenter';
+import LoginPresenter from './LoginPresenter';
 
 
 
 const Login = () => {
 return (
-    <OutHomePresenter />
+    <LoginPresenter />
 )
 }
 

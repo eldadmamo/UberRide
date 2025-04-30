@@ -2,7 +2,6 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import bgImage from "../../../public/bg.png"
 import { Link } from 'react-router-dom';
-import Button from '../../Components/Button/Button';
 
 const Container = styled.div`
   height: 100vh;

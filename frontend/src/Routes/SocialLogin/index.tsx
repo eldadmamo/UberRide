@@ -1,8 +1,9 @@
-import React from 'react';
+import SocialLoginContainer from './SocialLoginContainer';
+import SocialLoginPresenter from './SocialLoginPresenter';
 
 const SocialLogin = () => {
     return (
-        <span>Social Login</span>
+        <SocialLoginPresenter/>
     )
 }
 
